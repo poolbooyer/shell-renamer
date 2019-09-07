@@ -34,7 +34,9 @@ def generator():
         html+=head+body+"</html>"
         #output
         path="base-data/"
-        fname=f'doc{i+1}.html'
+        data=i+1
+        data=str(data)
+        fname=f'doc{data.zfill(3)}.html'
         with open(path+fname, 'w') as file:
             file.write(html)
 
