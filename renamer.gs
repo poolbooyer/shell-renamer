@@ -34,11 +34,15 @@ function myFunction() {
   var Tfolder=DriveApp.getFolderById(target);
   var files = Cfolder.getFiles();
   var file;
+  
+  if(!Tfolder.getFiles().hasNext()){
   while(files.hasNext()) {
     file = files.next();
     var fID=file.getName().substr(3,3);
     var fname=fID+"doc.html";
+    Logger.log(fname);
     var result=file.makeCopy(fname, Tfolder)
+  }
   }
   
 }
